@@ -1,12 +1,12 @@
 ﻿@model IEnumerable<ShopToAbroad.Models.Order>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Order List";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<table class="table table-hover">
-    <tr>
+<table class="table table-hover table-bordered  table-condensed">
+    <tr style="color:forestgreen; font-weight:bold; background-color:aqua">
         <th>
             @Html.DisplayNameFor(model => model.OrderID)
         </th>
@@ -29,7 +29,7 @@
             @Html.DisplayNameFor(model => model.TotalAmount)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.OrderDate)
+            @Html.DisplayNameFor(model =>   model.OrderDate)
         </th>
 
         <th></th>
@@ -63,8 +63,8 @@
                 @Html.DisplayFor(modelItem => item.OrderDate)
             </td>
 
-            <td>
-                @Html.ActionLink("View Details", "Details", new { id = item.OrderID })
+            <td style="color:forestgreen; font-weight:bold" >
+                @Html.ActionLink("Order Details", "Details", new { id = item.OrderID })
 
             </td>
         </tr>

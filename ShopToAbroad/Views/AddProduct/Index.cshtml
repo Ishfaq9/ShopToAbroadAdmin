@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<ShopToAbroad.Models.Product>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "All Product";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
@@ -12,8 +12,8 @@
 <br />
 <br />
 <div id="product" class="table-responsive ">
-    <table class="table table-condensed table-hover table-bordered table-striped table">
-        <tr>
+    <table class="table table-condensed table-hover table-bordered table" >
+        <tr style="background-color:aqua;">
             <th>
                 @Html.DisplayNameFor(model => model.Name)
             </th>
@@ -52,7 +52,7 @@
 
         @foreach (var item in Model)
         {
-            <tr>
+            <tr >
                 <td>
                     @Html.DisplayFor(modelItem => item.Name)
                 </td>

@@ -1,11 +1,11 @@
 ﻿@model IEnumerable<ShopToAbroad.Models.Customer>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Customer List";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h2>Index</h2>
+
 
 <div>
 
@@ -14,8 +14,8 @@
 <br />
 <div class="row">
 
-    <table class="table table-hover table-bordered table-striped">
-        <tr>
+    <table class="table table-hover table-bordered table-condensed">
+        <tr style="background-color:aqua;">
             <th>
                 @Html.DisplayNameFor(model => model.CustomerID)
             </th>

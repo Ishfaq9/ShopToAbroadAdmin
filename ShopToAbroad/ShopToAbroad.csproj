@@ -145,6 +145,7 @@
     <Compile Include="Controllers\MyCartController.cs" />
     <Compile Include="Controllers\OrderController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\RegisterController.cs" />
     <Compile Include="Controllers\SupplierController.cs" />
     <Compile Include="Controllers\ThankYouController.cs" />
     <Compile Include="Controllers\WishListController.cs" />
@@ -298,6 +299,9 @@
     <Content Include="Content\css\theme-color\yellow-theme.css" />
     <Content Include="Content\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\img\admin_panel_images\ishfaklatest.jpg" />
+    <Content Include="Content\img\admin_panel_images\rabbianother.jpg" />
+    <Content Include="Content\img\admin_panel_images\salmanNew.jpg" />
     <Content Include="Content\img\close-icon.png" />
     <Content Include="Content\img\electronics\electronic-1.png" />
     <Content Include="Content\img\electronics\electronic-2.png" />
@@ -317,6 +321,7 @@
     <Content Include="Content\img\fashion\fashion-header-bg-8.jpg" />
     <Content Include="Content\img\flag\english.jpg" />
     <Content Include="Content\img\flag\french.jpg" />
+    <Content Include="Content\img\icons8-shopping-cart-100.png" />
     <Content Include="Content\img\logo.jpg" />
     <Content Include="Content\img\man-small-1.jpg" />
     <Content Include="Content\img\man\polo-shirt-1.png" />
@@ -524,6 +529,8 @@
     <Content Include="Views\Supplier\Index.cshtml" />
     <Content Include="Views\_Order.cshtml" />
     <Content Include="Views\Dashboard\Index.cshtml" />
+    <Content Include="Views\Register\Register.cshtml" />
+    <Content Include="Views\admin_Login\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

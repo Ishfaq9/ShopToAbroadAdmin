@@ -1,17 +1,28 @@
 ﻿@model ShopToAbroad.Models.Product
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = " Product Details";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h2>Details</h2>
+<style>
+    .heading {
+        color: royalblue;
+        font-weight: bold;
+    }
+
+    .data {
+        font-weight: bold;
+    }
+
+   
+</style>
 
 
 <div class="row">
     <div class="col-md-8">
         <dl class="dl-horizontal ">
-            <dt>
+            <dt class="heading">
                 @Html.DisplayNameFor(model => model.Name)
             </dt>
 
@@ -19,195 +30,195 @@
                 @Html.DisplayFor(model => model.Name)
             </dd>
 
-            <dt>
+            <dt class="heading">
                 @Html.DisplayNameFor(model => model.QuantityPerUnit)
             </dt>
 
-            <dd>
+            <dd class="data">
                 @Html.DisplayFor(model => model.QuantityPerUnit)
             </dd>
 
-            <dt>
+            <dt class="heading">
                 @Html.DisplayNameFor(model => model.UnitPrice)
             </dt>
 
-            <dd>
+            <dd class="data">
                 @Html.DisplayFor(model => model.UnitPrice)
             </dd>
 
-            <dt>
+            <dt class="heading">
                 @Html.DisplayNameFor(model => model.OldPrice)
             </dt>
 
-            <dd>
+            <dd class="data">
                 @Html.DisplayFor(model => model.OldPrice)
             </dd>
 
-            <dt>
+            <dt class="heading">
                 @Html.DisplayNameFor(model => model.UnitWeight)
             </dt>
 
-            <dd>
+            <dd class="data">
                 @Html.DisplayFor(model => model.UnitWeight)
             </dd>
 
-            <dt>
+            <dt class="heading">
                 @Html.DisplayNameFor(model => model.Size)
             </dt>
 
-            <dd>
+            <dd class="data">
                 @Html.DisplayFor(model => model.Size)
             </dd>
 
-            <dt>
+            <dt class="heading">
                 @Html.DisplayNameFor(model => model.Discount)
             </dt>
 
-            <dd>
+            <dd class="data">
                 @Html.DisplayFor(model => model.Discount)
             </dd>
 
-            <dt>
+            <dt class="heading">
                 @Html.DisplayNameFor(model => model.UnitInStock)
             </dt>
 
-            <dd>
+            <dd class="data">
                 @Html.DisplayFor(model => model.UnitInStock)
             </dd>
 
-            <dt>
+            <dt class="heading">
                 @Html.DisplayNameFor(model => model.UnitOnOrder)
             </dt>
 
-            <dd>
+            <dd class="data">
                 @Html.DisplayFor(model => model.UnitOnOrder)
             </dd>
 
-            <dt>
+            <dt class="heading">
                 @Html.DisplayNameFor(model => model.ProductAvailable)
             </dt>
 
-            <dd>
+            <dd class="data">
                 @Html.DisplayFor(model => model.ProductAvailable)
             </dd>
 
-            <dt>
+            <dt class="heading">
                 @Html.DisplayNameFor(model => model.ImageURL)
             </dt>
 
-            <dd>
+            <dd class="data">
                 @Html.DisplayFor(model => model.ImageURL)
             </dd>
 
-            <dt>
+            <dt class="heading">
                 @Html.DisplayNameFor(model => model.AltText)
             </dt>
 
-            <dd>
+            <dd class="data">
                 @Html.DisplayFor(model => model.AltText)
             </dd>
 
-            <dt>
+            <dt class="heading">
                 @Html.DisplayNameFor(model => model.AddBadge)
             </dt>
 
-            <dd>
+            <dd class="data">
                 @Html.DisplayFor(model => model.AddBadge)
             </dd>
 
-            <dt>
+            <dt class="heading">
                 @Html.DisplayNameFor(model => model.OfferTitle)
             </dt>
 
-            <dd>
+            <dd class="data">
                 @Html.DisplayFor(model => model.OfferTitle)
             </dd>
 
-            <dt>
+            <dt class="heading">
                 @Html.DisplayNameFor(model => model.OfferBadgeClass)
             </dt>
 
-            <dd>
+            <dd class="data">
                 @Html.DisplayFor(model => model.OfferBadgeClass)
             </dd>
 
-            <dt>
+            <dt class="heading">
                 @Html.DisplayNameFor(model => model.ShortDescription)
             </dt>
 
-            <dd>
+            <dd class="data">
                 @Html.DisplayFor(model => model.ShortDescription)
             </dd>
 
-            <dt>
+            <dt class="heading">
                 @Html.DisplayNameFor(model => model.LongDescription)
             </dt>
 
-            <dd>
+            <dd class="data">
                 @Html.DisplayFor(model => model.LongDescription)
             </dd>
 
-            <dt>
+            <dt class="heading">
                 @Html.DisplayNameFor(model => model.Picture1)
             </dt>
 
-            <dd>
+            <dd class="data">
                 @Html.DisplayFor(model => model.Picture1)
             </dd>
 
-            <dt>
+            <dt class="heading">
                 @Html.DisplayNameFor(model => model.Picture2)
             </dt>
 
-            <dd>
+            <dd class="data">
                 @Html.DisplayFor(model => model.Picture2)
             </dd>
 
-            <dt>
+            <dt class="heading">
                 @Html.DisplayNameFor(model => model.Picture3)
             </dt>
 
-            <dd>
+            <dd class="data">
                 @Html.DisplayFor(model => model.Picture3)
             </dd>
 
-            <dt>
+            <dt class="heading">
                 @Html.DisplayNameFor(model => model.Picture4)
             </dt>
 
-            <dd>
+            <dd class="data">
                 @Html.DisplayFor(model => model.Picture4)
             </dd>
 
-            <dt>
+            <dt class="heading">
                 @Html.DisplayNameFor(model => model.Note)
             </dt>
 
-            <dd>
+            <dd class="data">
                 @Html.DisplayFor(model => model.Note)
             </dd>
 
-            <dt>
+            <dt class="heading">
                 @Html.DisplayNameFor(model => model.Category.Name)
             </dt>
 
-            <dd>
+            <dd class="data">
                 @Html.DisplayFor(model => model.Category.Name)
             </dd>
 
-            <dt>
+            <dt class="heading">
                 @Html.DisplayNameFor(model => model.SubCategory.Name)
             </dt>
 
-            <dd>
+            <dd class="data">
                 @Html.DisplayFor(model => model.SubCategory.Name)
             </dd>
 
-            <dt>
+            <dt class="heading">
                 @Html.DisplayNameFor(model => model.Supplier.CompanyName)
             </dt>
 
-            <dd>
+            <dd class="data">
                 @Html.DisplayFor(model => model.Supplier.CompanyName)
             </dd>
         </dl>
@@ -218,6 +229,6 @@
         </div>
     </div>
 </div>
-<p>
+<p >
     @Html.ActionLink("Back to List", "Index")
 </p>

@@ -27,6 +27,7 @@ namespace ShopToAbroad.Controllers
 
         //REGISTER CUSTOMER
         [HttpPost]
+       
         public ActionResult Register(Customer cust)
         {
             if (ModelState.IsValid)

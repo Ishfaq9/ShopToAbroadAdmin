@@ -25,14 +25,28 @@
                 source: '@Url.Action("GetProducts","Product")'
             });
         });
+
     </script>
+
+    <style>
+
+        .affix {
+            top: 0;
+            width: 100%;
+            z-index: 9999 !important;
+        }
+
+            .affix + .container-fluid {
+                padding-top: 70px;
+            }
+    </style>
 
 </head>
 <body>
     <!-- wpf loader Two -->
     <div id="wpf-loader-two">
         <div class="wpf-loader-two-inner">
-            <span>Loading</span>
+            <span>Please Wait...</span>
         </div>
     </div>
     <!-- / wpf loader Two -->
@@ -43,7 +57,9 @@
     <header id="aa-header">
         <!-- start header top  -->
         <div class="aa-header-top">
-            <div class="container">
+
+            <div class="container" data-spy="affix" data-offset-top="197" style="background-color:orangered">
+
                 <div class="row">
                     <div class="col-md-12">
                         <div class="aa-header-top-area">
@@ -57,16 +73,14 @@
                                 </div>
                                 <!-- / language -->
                                 <!-- start currency -->
-                               
                                 <!-- / currency -->
                                 <!-- start cellphone -->
-                                
                                 <!-- / cellphone -->
                             </div>
                             <!-- / header top left -->
                             <div class="aa-header-top-right">
                                 <ul class="aa-head-top-nav-right">
-                                  
+
                                     <li><a href="@(Session["username"] != null ? Url.Action("Index", "Account") : Url.Action("Login", "Account"))">My Account</a></li>
                                     <li class="hidden-xs">
                                         <a href="@(Session["username"] != null ? Url.Action("Index", "WishList") : Url.Action("Login", "Account"))">
@@ -84,13 +98,11 @@
                                     @if (Session["username"] == null)
                                     {
 
-                                <li>@Html.ActionLink("Login", "Login", "Account")</li>
- }
-                            else
-                            {
-                                <li><a href="@Url.Action("Logout","Account")">Logout</a></li>
-                                                <li><a href="">@Session["username"]</a></li>
-}
+                        <li>@Html.ActionLink("Login", "Login", "Account")</li> }
+                                    else
+                                    {
+                        <li><a href="@Url.Action("Logout","Account")">Logout</a></li>
+                                        <li><a href="">@Session["username"]</a></li>}
                                 </ul>
                             </div>
                         </div>
@@ -109,36 +121,17 @@
                             <div class="aa-logo">
                                 <!-- Text based logo -->
                                 <a href="@Url.Action("Index","Home")">
-                                    <span class="fa fa-shopping-cart"></span>
-                                    <p>Khareedo<strong>.pk</strong> <span>Your Shopping Partner</span></p>
+                                    <span><img src="~/Content/img/icons8-shopping-cart-100.png"> </span>
+                                    <p>Shop To Abroad <span>Anytime Shopping</span></p>
                                 </a>
                                 <!-- img based logo -->
                                 <!-- <a href="index.html"><img src="~/Content/img/logo.jpg" alt="logo img"></a> -->
                             </div>
                             <!-- / logo  -->
-                            <!-- cart box -->
-                            <div class="aa-cartbox">
-                                <a class="aa-cart-link" href="#">
-                                    <span class="fa fa-shopping-basket"></span>
-                                    <span class="aa-cart-title">SHOPPING CART</span>
-                                    <span class="aa-cart-notify">@(ViewBag.NoOfItem==null ? 0 :ViewBag.NoOfItem)</span>
-                                </a>
-                                <div class="aa-cartbox-summary">
-                                    <ul>
-                                        @if (Session["username"] != null)
-                                        {
-                                            Html.RenderPartial("_CartBox");
-
-                                        }
-                                    </ul>
-                                    <a class="aa-cartbox-checkout aa-primary-btn" href="@Url.Action("Index","CheckOut")">Checkout</a>
-                                </div>
-                            </div>
-                            <!-- / cart box -->
                             <!-- search box -->
                             <div class="aa-search-box">
                                 <form action="@Url.Action("Search","Product")" method="get">
-                                    <input type="text" name="product" id="searchTxtBox" placeholder="Search product here . . . ">
+                                    <input type="text" name="product" id="searchTxtBox" placeholder="Search.....">
                                     <button type="submit"><span class="fa fa-search"></span></button>
                                 </form>
                             </div>
@@ -169,32 +162,7 @@
                         <!-- Left nav -->
                         <ul class="nav navbar-nav">
                             <li><a href="@Url.Action("Index","Home")">Home</a></li>
-                            @{ ShopToAbroad.Models.ShopToAbroadEntities db = new ShopToAbroad.Models.ShopToAbroadEntities();
-                                            Dictionary<string, IEnumerable<string>> navbar = new Dictionary<string, IEnumerable<string>>();
-
-                                            List<ShopToAbroad.Models.Category> Categories = db.Categories.ToList();
-                                            foreach (ShopToAbroad.Models.Category cat in Categories)
-                                            {
-                                                IEnumerable<string> subCat = db.SubCategories.Where(x => x.CategoryID == cat.CategoryID).Select(x => x.Name).ToList();
-                                                navbar.Add(cat.Name, subCat);
-                                            }
-                                            int count = 0;
-                                            foreach (KeyValuePair<string, IEnumerable<string>> nav in navbar)
-                                            {
-                                                if (count < 8)
-                                                {
-                                <li>
-                                    <a href="">@nav.Key<span class="caret"></span></a>
-                                    <ul class="dropdown-menu">
-                                        @foreach (var subNav in nav.Value)
-                                        {
-                    <li><a href="@Url.Action("GetProductsByCategory","Product", new { categoryName = subNav.Trim() })">@subNav.Trim()</a></li>}
-                                    </ul>
-                                </li> count++;
-                                                }
-                                            } }
-
-                        </ul>
+                           
                     </div><!--/.nav-collapse -->
                 </div>
             </div>
@@ -204,24 +172,7 @@
 
     @RenderBody()
 
-    <!-- Subscribe section -->
-    <section id="aa-subscribe">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="aa-subscribe-area">
-                        <h3>Subscribe our newsletter </h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, velit!</p>
-                        <form action="" class="aa-subscribe-form">
-                            <input type="email" name="" id="" placeholder="Enter your Email">
-                            <input type="submit" value="Subscribe">
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- / Subscribe section -->
+    
     <!-- footer -->
     <footer id="aa-footer">
         <!-- footer bottom -->
@@ -243,42 +194,17 @@
                                         </ul>
                                     </div>
                                 </div>
-                                <div class="col-md-3 col-sm-6">
-                                    <div class="aa-footer-widget">
-                                        <div class="aa-footer-widget">
-                                            <h3>Knowledge Base</h3>
-                                            <ul class="aa-footer-nav">
-                                                <li><a href="#">Delivery</a></li>
-                                                <li><a href="#">Returns</a></li>
-                                                <li><a href="#">Services</a></li>
-                                                <li><a href="#">Discount</a></li>
-                                                <li><a href="#">Special Offer</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 col-sm-6">
-                                    <div class="aa-footer-widget">
-                                        <div class="aa-footer-widget">
-                                            <h3>Useful Links</h3>
-                                            <ul class="aa-footer-nav">
-                                                <li><a href="#">Site Map</a></li>
-                                                <li><a href="#">Search</a></li>
-                                                <li><a href="#">Advanced Search</a></li>
-                                                <li><a href="#">Suppliers</a></li>
-                                                <li><a href="#">FAQ</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
+
+
+
                                 <div class="col-md-3 col-sm-6">
                                     <div class="aa-footer-widget">
                                         <div class="aa-footer-widget">
                                             <h3>Contact Us</h3>
                                             <address>
-                                                <p>Suit#007, Sharae Faisal ,Karachi</p>
-                                                <p><span class="fa fa-phone"></span>021-6558-6588</p>
-                                                <p><span class="fa fa-envelope"></span>help@Khareedo.com.pk</p>
+                                                <p>House No# 4, Shyamoli, Dhaka </p>
+                                                <p><span class="fa fa-phone"></span>+880 154235-6889</p>
+                                                <p><span class="fa fa-envelope"></span>help@ShopToAbroad.com</p>
                                             </address>
                                             <div class="aa-footer-social">
                                                 <a href="#"><span class="fa fa-facebook"></span></a>
@@ -301,13 +227,15 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="aa-footer-bottom-area">
-                            <p>Designed by <a href="http://www.facebook.com/zulfiqar.akram366">Zulfiqar Akram</a></p>
-                            <div class="aa-footer-payment">
-                                <span class="fa fa-cc-mastercard"></span>
-                                <span class="fa fa-cc-visa"></span>
-                                <span class="fa fa-paypal"></span>
-                                <span class="fa fa-cc-discover"></span>
-                            </div>
+                            <p>Designed by :</p>
+                            <br>
+                            <p><a href="https://www.facebook.com/ishfaq.rahman.589">Ishfaq Rahman</a><a>   (Conatct Number : 01912120046)</a></p>
+                            <br>
+                            <p> <a href="https://www.facebook.com/rabbi1010">Abu Tarek Rabbi</a><a>        (Conatct Number : 01912120045)</a></p>
+                            <br>
+                            <p><a href="https://www.facebook.com/profile.php?id=100007098375136">Salman Chowdhury</a><a>(Conatct Number : 01912120042)</a></p>
+                            <br>
+                            
                         </div>
                     </div>
                 </div>
@@ -315,11 +243,13 @@
         </div>
     </footer>
     <!-- / footer -->
+    <!-- / footer -->
 
     @Scripts.Render("~/Content/js")
     @RenderSection("scripts", required: false)
 
-    <script type="text/javascript">$(function () {
+    <script type="text/javascript">
+        $(function () {
 
             // Initalize modal dialog
             // attach modal-container bootstrap attributes to links with .modal-link class.

@@ -30,7 +30,7 @@ namespace ShopToAbroad
                       "~/Content/css/jquery.simpleLens.css",
                       "~/Content/css/slick.css",
                       "~/Content/css/nouislider.css",
-                      "~/Content/css/theme-color/green-theme.css",
+                      "~/Content/css/theme-color/red-theme.css",
                       "~/Content/css/sequence-theme.modern-slide-in.css",
                       "~/Content/css/style.css"));
 

@@ -42,7 +42,7 @@ namespace ShopToAbroad.Controllers
         public ActionResult Logout()
         {
             Session.Clear();
-            return RedirectToAction("Index", "admin_Login");
+            return RedirectToAction("Index", "Home");
         }
     }
 }

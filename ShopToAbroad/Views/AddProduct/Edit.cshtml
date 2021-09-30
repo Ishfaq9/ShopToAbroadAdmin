@@ -1,15 +1,15 @@
 ﻿@model ShopToAbroad.Models.Product
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "Edit Product";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h2>Edit</h2>
 
 
 
-@using (Html.BeginForm("Edit", "Product", FormMethod.Post))
+
+@using (Html.BeginForm("Edit", "AddProduct", FormMethod.Post))
 {
 @Html.AntiForgeryToken()
 
